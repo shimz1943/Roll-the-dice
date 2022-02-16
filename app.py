@@ -1,41 +1,43 @@
-covik_ima_dimike = False
+milkman_has_milk = False
 
 counter = 0
 while counter < 5:
-    robi_pila_na_mob = input("Da li pilaš čovika pozivima svako 10 minuti? (d/n) or (da/ne): ")
-    if robi_pila_na_mob.lower() == "d" or robi_pila_na_mob.lower()=="da":
-        covik_ima_dimike = True
+    you_annoy_with_calls = input("Are you shameless enough to get the milkan to answer to your calls? (y/yes/n/no): ")
+    if you_annoy_with_calls.lower() == "y" or you_annoy_with_calls.lower()== "yes":
+        milkman_has_milk = True
         break
-    elif robi_pila_na_mob.lower() == "n" or robi_pila_na_mob.lower()=="ne":
+    elif you_annoy_with_calls.lower() == "n" or you_annoy_with_calls.lower()== "no":
         if counter == 4:
-            print("robi kme kme nema za pušit")
+            print("Anxiety got all over you. No milk, no party. :(")
             break
-        print("sinko jesi li ti bolestan daj ga zovi")
+        print("C'mon man call him. Coffee without milk is no g00d bruh.")
         counter = counter + 1
 
     else:
-        print("ne razumim, aj ponovo")
+        print("Don't understand your input. Please repeat.")
 
-while covik_ima_dimike:
+while milkman_has_milk:
 
-    kolicina = int(input("E lega imam. Koliko ti triba? (upiši koliko grama ti triba): "))
-    gram_price = 0
+    quantity_milk = int(input("""
+Sorry man I was busy. My stocks are full so don't worry. 
+How much milk do you need? (write the number for amount of milk in liters): """))
+    milk_price = 0
 
-    if kolicina < 25:
-        gram_price = 30
-
-
-    elif 25 <= kolicina < 50:
-        gram_price = 15
+    if quantity_milk < 25:
+        milk_price = 8
 
 
-    elif 50 <= kolicina < 100:
-        gram_price = 10
+    elif 25 <= quantity_milk < 50:
+        milk_price = 6
 
 
-    elif kolicina >= 100:
-        gram_price = 5
+    elif 50 <= quantity_milk < 100:
+        milk_price = 4
 
-    total = kolicina * gram_price
-    print(f"{kolicina}g ce te izac {total}kn")
+
+    elif quantity_milk >= 100:
+        milk_price = 2
+
+    total = quantity_milk * milk_price
+    print(f"{quantity_milk}l of milk will total you of {total}kn")
     break
