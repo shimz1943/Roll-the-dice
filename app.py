@@ -1,12 +1,12 @@
 milkman_has_milk = False
-
 counter = 0
+
 while counter < 5:
     you_annoy_with_calls = input("Are you shameless enough to get the milkan to answer to your calls? (y/yes/n/no): ")
-    if you_annoy_with_calls.lower() == "y" or you_annoy_with_calls.lower()== "yes":
+    if you_annoy_with_calls.lower() == "y" or you_annoy_with_calls.lower() == "yes":
         milkman_has_milk = True
         break
-    elif you_annoy_with_calls.lower() == "n" or you_annoy_with_calls.lower()== "no":
+    elif you_annoy_with_calls.lower() == "n" or you_annoy_with_calls.lower() == "no":
         if counter == 4:
             print("Anxiety got all over you. No milk, no party. :(")
             break
@@ -14,7 +14,7 @@ while counter < 5:
         counter = counter + 1
 
     else:
-        print("Don't understand your input. Please repeat.")
+        print("Don't understand your input. Please try again.")
 
 while milkman_has_milk:
 
