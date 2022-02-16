@@ -10,4 +10,4 @@ However if you were persistent enough and answered y/yes then it takes you to se
 The milkman answers your call and asks you to provide the quantity of milk you want in liters.
 The milkman is a good guy and offers a wholesale price for his dairy products and he's willing to offer you a discount depending on how much milk do you want.
 
-After you're done entering the quantity, the app prints out the formatted message containing your ordered quantity of milk and the final price.
+After you're done entering the quantity, the app prints out a formatted message containing your ordered quantity of milk and the final price.
