@@ -1,43 +1,29 @@
-milkman_has_milk = False
-counter = 0
+import random
 
-while counter < 5:
-    you_annoy_with_calls = input("Are you shameless enough to get the milkan to answer to your calls? (y/yes/n/no): ")
-    if you_annoy_with_calls.lower() == "y" or you_annoy_with_calls.lower() == "yes":
-        milkman_has_milk = True
-        break
-    elif you_annoy_with_calls.lower() == "n" or you_annoy_with_calls.lower() == "no":
-        if counter == 4:
-            print("Anxiety got all over you. No milk, no party. :(")
-            break
-        print("C'mon man call him. Coffee without milk is no g00d bruh.")
-        counter = counter + 1
+
+def logika():
+    if obrana[0] >= napad[0] and obrana[1] >= napad[1]:
+
+        print("Obrana dobija oba")
+
+    elif napad[0] > obrana[0] and napad[1] > obrana[1]:
+        print("Napad dobija oba")
 
     else:
-        print("Don't understand your input. Please try again.")
-
-while milkman_has_milk:
-
-    quantity_milk = int(input("""
-Sorry man I was busy. My stocks are full so don't worry. 
-How much milk do you need? (write the number for amount of milk in liters): """))
-    milk_price = 0
-
-    if quantity_milk < 25:
-        milk_price = 8
+        print("Oba nose po 1")
 
 
-    elif 25 <= quantity_milk < 50:
-        milk_price = 6
+napad = [str(random.randint(1, 6)), str(random.randint(1, 6))]
+obrana = [str(random.randint(1, 6)), str(random.randint(1, 6))]
+
+napad.sort(reverse=True)
+obrana.sort(reverse=True)
+
+print("Napad: " + napad[0] + " " + napad[1])
+print("Obrana: " + obrana[0] + " " + obrana[1])
+print("---------------")
+logika()
 
 
-    elif 50 <= quantity_milk < 100:
-        milk_price = 4
 
 
-    elif quantity_milk >= 100:
-        milk_price = 2
-
-    total = quantity_milk * milk_price
-    print(f"{quantity_milk}l of milk will total you of {total}kn")
-    break
