@@ -21,7 +21,7 @@ obrana.sort(reverse=True)
 
 print("Napad: " + napad[0] + " " + napad[1])
 print("Obrana: " + obrana[0] + " " + obrana[1])
-print("---------------")
+print("--------------")
 logika()
 
 
