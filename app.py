@@ -36,35 +36,32 @@ def dice_logic():
 #   Initializing and declaring variables for lists with random numbers and no-value variables for dice input
 offence = [str(random.randint(1, 6)), str(random.randint(1, 6)), str(random.randint(1, 6))]
 defence = [str(random.randint(1, 6)), str(random.randint(1, 6))]
-dicenumber_off = None
-dicenumber_def = None
 
 #   sorting lists - descending
 offence.sort(reverse=True)
 defence.sort(reverse=True)
 
 #   loop to make sure that player input is valid
-while True:
+
+dicenumber_off = int(input("Choose dice number for strike (1-3): "))
+while dicenumber_off > 3:
     try:
-        dicenumber_off = int(input("Choose dice number for strike (1-3): "))
+        dicenumber_off = int(input("Wrong! Pick again 8====|)~~~ :  (1-3): "))
         if dicenumber_off <= 3:
             break
 
     except ValueError:
-        if dicenumber_off > 3:
-            continue
-        continue
+        print("You can't enter string")
 
-while True:
+dicenumber_def = int(input("Choose dice number for defence (1-2): "))
+while dicenumber_def > 2:
     try:
-        dicenumber_def = int(input("Choose dice number for defence (1-2): "))
+        dicenumber_def = int(input("Wrong! Pick again 8====|)~~~ : (1-2): "))
         if dicenumber_def <= 2:
             break
 
     except ValueError:
-        if dicenumber_def > 2:
-            continue
-        continue
+        print("You can't enter string")
 
 #  Rolled dice visual
 if dicenumber_off == 3:
