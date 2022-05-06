@@ -51,7 +51,7 @@ while dicenumber_off > 3:
             break
 
     except ValueError:
-        continue
+        print("You can't enter string")
 
 dicenumber_def = int(input("Choose dice number for defence (1-2): "))
 while dicenumber_def > 2:
@@ -61,7 +61,7 @@ while dicenumber_def > 2:
             break
 
     except ValueError:
-        continue
+        print("You can't enter string")
 
 #  Rolled dice visual
 if dicenumber_off == 3:
