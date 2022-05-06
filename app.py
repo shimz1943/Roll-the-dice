@@ -1,86 +1,60 @@
 import random
 
 
-#   Dice comparison and winner announcer function
-def dice_logic():
-    if dicenumber_off == 3 and dicenumber_def == 2:
+# Napravi metodu koja prima 2 broja i ispituje koji je veći.
+# Napravi metodu koja prima broj i string i ispituje jeli dužina stringa veća ili nije od broja
+# Napravi metodu koja prima 2 broja i sadržava 1 liniju koda koja vrati dali je broj 1 veći od broja 2 za ispitivanje
+# primjeni isti princip i u metodi 2
+# Napravi metodu koja prima 2 liste brojeva i stvara treću listu koja je rezultat zbroja brojeva na istim pozicijama u listama
+def metoda1(num1, num2):
+    if num1 > num2:
+        return (num1)
+    return (num2)
 
-        if defence[0] >= offence[0] and defence[1] >= offence[1]:
-            print("Offence lose both units")
 
-        elif offence[0] > defence[0] and offence[1] > defence[1]:
-            print("Defence lose both units")
+def metoda2(limit, word):
+    return limit > len(word)
 
+
+def dali_je_br1_veci_od_br2(num1, num2):
+    return num1 > num2
+
+
+def metoda4(list1, list2):
+    result = []
+
+    if dali_je_br1_veci_od_br2(len(list1), len(list2)):
+        veca = list1
+        manja = list2
+    else:
+        veca = list2
+        manja = list1
+
+    index = 0
+    for broj_u_vecoj in veca:
+        if dali_je_br1_veci_od_br2(index, len(manja)-1):
+            result.append(broj_u_vecoj)
         else:
-            print("Both lose one unit")
+            sum = broj_u_vecoj + manja[index]
+            result.append(sum)
+        index += 1
+    return(result)
 
-    if dicenumber_off == 2 and dicenumber_def == 2:
+print(dali_je_br1_veci_od_br2(3, 4))
 
-        if defence[0] >= offence[0] and defence[1] >= offence[1]:
-            print("Offence lose both units")
+A = input("upisi broj 1: ")
+B = input("upisi broj 2: ")
+print(f'Veći broj je {metoda1(A, B)}')
 
-        elif offence[0] > defence[0] and offence[1] > defence[1]:
-            print("Defence lose both units")
+limit = int(input("Upiši limit jeben ti mrtvog oca: "))
+word = input("UPIŠI RIČ MRTVOG TI ISUSA JEBEN: ")
+print(f'RIČ JE MANJA: {metoda2(limit, word)}')
 
-        else:
-            print("Both lose one unit")
+C = input("upisi broj 1: ")
+D = input("upisi broj 2: ")
+print(f'Broj 1 je veći:  {dali_je_br1_veci_od_br2(C, D)}')
 
-    if dicenumber_def == 1:
-        if defence[0] >= offence[0]:
-            print("Offence lose one unit")
+prva_lista = [1, 2, 5, 7, 3, 8, 3, 1, 543, 7676]
+druga_lista = [12, 32, 15, 47, 53, 68, 2]
 
-        elif offence[0] > defence[0]:
-            print("Defence lose one unit")
-
-
-#   Initializing and declaring variables for lists with random numbers and no-value variables for dice input
-offence = [str(random.randint(1, 6)), str(random.randint(1, 6)), str(random.randint(1, 6))]
-defence = [str(random.randint(1, 6)), str(random.randint(1, 6))]
-
-#   sorting lists - descending
-offence.sort(reverse=True)
-defence.sort(reverse=True)
-
-#   loop to make sure that player input is valid
-
-dicenumber_off = int(input("Choose dice number for strike (1-3): "))
-while dicenumber_off > 3:
-    try:
-        dicenumber_off = int(input("Wrong! Pick again 8====|)~~~ :  (1-3): "))
-        if dicenumber_off <= 3:
-            break
-
-    except ValueError:
-        print("You can't enter string")
-
-dicenumber_def = int(input("Choose dice number for defence (1-2): "))
-while dicenumber_def > 2:
-    try:
-        dicenumber_def = int(input("Wrong! Pick again 8====|)~~~ : (1-2): "))
-        if dicenumber_def <= 2:
-            break
-
-    except ValueError:
-        print("You can't enter string")
-
-#  Rolled dice visual
-if dicenumber_off == 3:
-    print("Offence: " + offence[0] + " " + offence[1] + " " + offence[2])
-
-
-
-elif dicenumber_off == 2:
-    print("Offence: " + offence[0] + " " + offence[1])
-
-
-elif dicenumber_off == 1:
-    print("Offence: " + offence[0])
-
-if dicenumber_def == 2:
-    print("Defence: " + defence[0] + " " + defence[1])
-
-elif dicenumber_def == 1:
-    print("Defence: " + defence[0])
-
-print("------------")
-dice_logic()
+print(metoda4(prva_lista, druga_lista))
