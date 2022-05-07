@@ -46,7 +46,7 @@ defence.sort(reverse=True)
 dicenumber_off = int(input("Choose dice number for strike (1-3): "))
 while dicenumber_off > 3:
     try:
-        dicenumber_off = int(input("Wrong! Pick again 8====|)~~~ :  (1-3): "))
+        dicenumber_off = int(input("Wrong! Pick again:  (1-3): "))
         if dicenumber_off <= 3:
             break
 
@@ -56,7 +56,7 @@ while dicenumber_off > 3:
 dicenumber_def = int(input("Choose dice number for defence (1-2): "))
 while dicenumber_def > 2:
     try:
-        dicenumber_def = int(input("Wrong! Pick again 8====|)~~~ : (1-2): "))
+        dicenumber_def = int(input("Wrong! Pick again: (1-2): "))
         if dicenumber_def <= 2:
             break
 
