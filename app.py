@@ -67,14 +67,12 @@ while dicenumber_def > 2:
 if dicenumber_off == 3:
     print("Offence: " + offence[0] + " " + offence[1] + " " + offence[2])
 
-
-
 elif dicenumber_off == 2:
     print("Offence: " + offence[0] + " " + offence[1])
 
-
 elif dicenumber_off == 1:
     print("Offence: " + offence[0])
+
 
 if dicenumber_def == 2:
     print("Defence: " + defence[0] + " " + defence[1])
